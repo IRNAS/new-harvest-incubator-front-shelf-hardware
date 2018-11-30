@@ -1,0 +1,4 @@
+Added Pin To Net: NetName=DAT3 Pin=U3-2
+Added Pin To Net: NetName=CMD Pin=U3-3
+Added Pin To Net: NetName=CLK Pin=U3-5
+Added Pin To Net: NetName=DAT0 Pin=U3-7

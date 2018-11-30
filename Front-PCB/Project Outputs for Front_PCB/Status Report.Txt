@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 11:44:32 AM On 11/25/2018
+
+Output: Bill of Materials production
+Type  : BOM
+From  : Project [Front_PCB.PrjPcb]
+   Generated File[Bill of Materials production-Front_PCB.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 11:44:42 AM On 11/25/2018

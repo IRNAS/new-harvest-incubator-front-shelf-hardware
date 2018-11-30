@@ -1,0 +1,103 @@
+PCBNEW-LibModule-V1  2018-08-23 14:49:12
+# encoding utf-8
+Units mm
+$INDEX
+DM3CS-SF
+$EndINDEX
+$MODULE DM3CS-SF
+Po 0 0 0 15 5b7ebb58 00000000 ~~
+Li DM3CS-SF
+Cd DM3CS-SF
+Kw Connector
+Sc 0
+At SMD
+AR 
+Op 0 0 0
+T0 -3.2 -4.057 1.27 1.27 0 0.254 N V 21 N "J**"
+T1 -3.2 -4.057 1.27 1.27 0 0.254 N I 21 N "DM3CS-SF"
+DS -9.871 -13.438 3.959 -13.438 0.1 24
+DS 3.959 -13.438 3.959 0.642 0.1 24
+DS 3.959 0.642 -9.871 0.642 0.1 24
+DS -9.871 0.642 -9.871 -13.438 0.1 24
+DS 3.959 -2.476 3.959 -13.438 0.1 21
+DS -9.871 -2.538 -9.871 -13.438 0.1 21
+$PAD
+Po 0 0
+Sh "1" R 0.7 2 0 0 0
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po -1.1 0
+Sh "2" R 0.7 2 0 0 0
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po -2.2 0
+Sh "3" R 0.7 2 0 0 0
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po -3.3 0
+Sh "4" R 0.7 2 0 0 0
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po -4.4 0
+Sh "5" R 0.7 2 0 0 0
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po -5.5 0
+Sh "6" R 0.7 2 0 0 0
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po -6.6 0
+Sh "7" R 0.7 2 0 0 0
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po -7.7 0
+Sh "8" R 0.7 2 0 0 0
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po -9.8 -0.5
+Sh "9" R 1 2.6 0 0 0
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po 3.55 -0.5
+Sh "10" R 1.5 2.6 0 0 0
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po 1.65 -12.8
+Sh "11" R 1.2 1.2 0 0 900
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po -1.4 -12.7
+Sh "12" R 1.4 2.7 0 0 900
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$PAD
+Po -6.3 -12.7
+Sh "13" R 1.4 2.7 0 0 900
+At SMD N 00888000
+Ne 0 ""
+$EndPAD
+$EndMODULE DM3CS-SF
+$EndLIBRARY

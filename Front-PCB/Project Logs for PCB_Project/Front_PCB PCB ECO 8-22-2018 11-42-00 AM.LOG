@@ -1,0 +1,17 @@
+Change Component Designator: OldDesignator=B? NewDesignator=B1
+Change Component Designator: OldDesignator=B? NewDesignator=B2
+Change Component Designator: OldDesignator=B? NewDesignator=B3
+Change Component Designator: OldDesignator=B? NewDesignator=B4
+Change Net Name : Old Net Name=NetB?_4 New Net Name=NetB4_4
+Added Pin To Net: NetName=NetB1_4 Pin=B1-4
+Added Pin To Net: NetName=NetB1_4 Pin=R4-1
+Added Net: Name=NetB1_4
+Added Pin To Net: NetName=NetB2_4 Pin=B2-4
+Added Pin To Net: NetName=NetB2_4 Pin=R5-1
+Added Net: Name=NetB2_4
+Added Pin To Net: NetName=NetB3_4 Pin=B3-4
+Added Pin To Net: NetName=NetB3_4 Pin=R6-1
+Added Net: Name=NetB3_4
+Added Member To Class: ClassName=Front_PCB Member=Component B1 Tactile switch
+Added Member To Class: ClassName=Front_PCB Member=Component B2 Tactile switch
+Added Member To Class: ClassName=Front_PCB Member=Component B3 Tactile switch

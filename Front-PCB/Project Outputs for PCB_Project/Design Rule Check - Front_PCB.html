@@ -1,0 +1,433 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD17\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">9/10/2018</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11:39:16 AM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc" class="file"><acronym title="D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc">D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">31</td></tr>
+</table>
+</td>
+</table><a name="IDXDIRNW2S31KHEZXQ355XXD0IFGTK0Y0SOZJVKNNB3LWLKG2BM0CN"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIRBSROUIPXBGKPUPVLBFN4T00CBZG1MFZRLOBTIRWCCOSQFT25PK">Clearance Constraint (Gap=0.203mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZVZM4VSRRIKNFWTJRHY44LOVMFGO2CIYUDVPH1BLGQPDCABCRHWM">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3B0003BDNTDFHX0Q0WVTONUAZHHRBNQBNVKSQLBNJO4JCC1RPJSH">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJ5T0P32RL31WITZKTT1IJ0S4JKDGJHOZ10HHUXH0TLXYYWOSTUOF">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDPSIZ54ZHERNTCJZZKPQGDNJTJPPG30JEYZUTDSHYHK2VG4L35HMH">Width Constraint (Min=0.203mm) (Max=0.762mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDC45GPJRAYTLXGKNDCOL0UBXI4INGCAMUAQAFVXDD5O011HM5OTD">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJGQRNPKEMITSIXQWLL0WUJYGRHEDI0TNXUC3JXIJHIMHJXUAKNSB">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSKVXSFDVEOOOB1XOEECGLPKMLIUFXK05IWJL1ECWPJ142A4HTWSE">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRSC1NZIIQ2CKEZ3LYMKLK2B3IKDWPYFUSLSOTFNSNAUJJMNYNZXM">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">13</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZNKIEUZCYCWJEYKNB3VOMFNCIAA4TWAAWSXDKBRBJIRJRU5CZFB">Silk To Solder Mask (Clearance=0.01mm) (IsPad),(All)</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDLGJKWLNG2BEMRMDZDIFEQ1DLEWPJEWRWVSLQNNRSWJFU3ZFVTJ">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">11</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDLFMXI3HTB4WCD5TAXSZ40EXR0NIZ1MRGAYM2SBGNXVYWM0O0SPHK">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5JK4DYAMBXRVNUYLNGJBHU2X2N4UUQ0MZ1RSURKAT1AXKNV3QFTO">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">31</td>
+</tr>
+</table><br><a name="IDJGQRNPKEMITSIXQWLL0WUJYGRHEDI0TNXUC3JXIJHIMHJXUAKNSB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4149.221mil|Location2.X=4307.471mil|Location1.Y=4340.56mil|Location2.Y=4498.81mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4149.221mil|Location2.X=4307.471mil|Location1.Y=4340.56mil|Location2.Y=4498.81mil|Absolute=True">Hole Size Constraint: (3.988mm &gt; 2.54mm) Pad J2-(107.4mm,112.26mm) on Multi-Layer Actual Slot Hole Width = 3.988mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4966.151mil|Location2.X=5124.401mil|Location1.Y=4340.56mil|Location2.Y=4498.81mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4966.151mil|Location2.X=5124.401mil|Location1.Y=4340.56mil|Location2.Y=4498.81mil|Absolute=True">Hole Size Constraint: (3.988mm &gt; 2.54mm) Pad J2-(128.15mm,112.26mm) on Multi-Layer Actual Slot Hole Width = 3.988mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3853.706mil|Location2.X=3973.066mil|Location1.Y=3929.296mil|Location2.Y=4048.657mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3853.706mil|Location2.X=3973.066mil|Location1.Y=3929.296mil|Location2.Y=4048.657mil|Absolute=True">Hole Size Constraint: (3mm &gt; 2.54mm) Pad Free-2(99.4mm,101.32mm) on Multi-Layer Actual Hole Size = 3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5302.525mil|Location2.X=5421.885mil|Location1.Y=3928.509mil|Location2.Y=4047.869mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5302.525mil|Location2.X=5421.885mil|Location1.Y=3928.509mil|Location2.Y=4047.869mil|Absolute=True">Hole Size Constraint: (3mm &gt; 2.54mm) Pad Free-1(136.2mm,101.3mm) on Multi-Layer Actual Hole Size = 3mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDRSC1NZIIQ2CKEZ3LYMKLK2B3IKDWPYFUSLSOTFNSNAUJJMNYNZXM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3826.989mil|Location2.X=3838.239mil|Location1.Y=4466.816mil|Location2.Y=4478.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3826.989mil|Location2.X=3838.239mil|Location1.Y=4466.816mil|Location2.Y=4478.066mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad J1-6(97.725mm,113.35mm) on Top Layer And Pad J1-5(97.725mm,113.85mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3826.989mil|Location2.X=3838.239mil|Location1.Y=4447.131mil|Location2.Y=4458.381mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3826.989mil|Location2.X=3838.239mil|Location1.Y=4447.131mil|Location2.Y=4458.381mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad J1-7(97.725mm,112.85mm) on Top Layer And Pad J1-6(97.725mm,113.35mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3826.989mil|Location2.X=3838.239mil|Location1.Y=4427.446mil|Location2.Y=4438.696mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3826.989mil|Location2.X=3838.239mil|Location1.Y=4427.446mil|Location2.Y=4438.696mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad J1-8(97.725mm,112.35mm) on Top Layer And Pad J1-7(97.725mm,112.85mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.383mil|Location2.X=3938.633mil|Location1.Y=4466.816mil|Location2.Y=4478.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.383mil|Location2.X=3938.633mil|Location1.Y=4466.816mil|Location2.Y=4478.066mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad J1-3(100.275mm,113.35mm) on Top Layer And Pad J1-4(100.275mm,113.85mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.383mil|Location2.X=3938.633mil|Location1.Y=4447.131mil|Location2.Y=4458.381mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.383mil|Location2.X=3938.633mil|Location1.Y=4447.131mil|Location2.Y=4458.381mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad J1-2(100.275mm,112.85mm) on Top Layer And Pad J1-3(100.275mm,113.35mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.383mil|Location2.X=3938.633mil|Location1.Y=4427.446mil|Location2.Y=4438.696mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3927.383mil|Location2.X=3938.633mil|Location1.Y=4427.446mil|Location2.Y=4438.696mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.047mm &lt; 0.254mm) Between Pad J1-1(100.275mm,112.35mm) on Top Layer And Pad J1-2(100.275mm,112.85mm) on Top Layer [Top Solder] Mask Sliver [0.047mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=4050.162mil|Location2.Y=4061.412mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=4050.162mil|Location2.Y=4061.412mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad U3-7(159.513mm,102.467mm) on Bottom Layer And Pad U3-8(159.513mm,103.567mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=4006.855mil|Location2.Y=4018.105mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=4006.855mil|Location2.Y=4018.105mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad U3-6(159.513mm,101.367mm) on Bottom Layer And Pad U3-7(159.513mm,102.467mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=3963.548mil|Location2.Y=3974.798mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=3963.548mil|Location2.Y=3974.798mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad U3-5(159.513mm,100.267mm) on Bottom Layer And Pad U3-6(159.513mm,101.367mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=3920.241mil|Location2.Y=3931.491mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=3920.241mil|Location2.Y=3931.491mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad U3-4(159.513mm,99.167mm) on Bottom Layer And Pad U3-5(159.513mm,100.267mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=3876.934mil|Location2.Y=3888.184mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=3876.934mil|Location2.Y=3888.184mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad U3-3(159.513mm,98.067mm) on Bottom Layer And Pad U3-4(159.513mm,99.167mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=3833.627mil|Location2.Y=3844.877mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=3833.627mil|Location2.Y=3844.877mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad U3-2(159.513mm,96.967mm) on Bottom Layer And Pad U3-3(159.513mm,98.067mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=3790.32mil|Location2.Y=3801.57mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.044mil|Location2.X=6242.294mil|Location1.Y=3790.32mil|Location2.Y=3801.57mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.197mm &lt; 0.254mm) Between Pad U3-1(159.513mm,95.867mm) on Bottom Layer And Pad U3-2(159.513mm,96.967mm) on Bottom Layer [Bottom Solder] Mask Sliver [0.197mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDZNKIEUZCYCWJEYKNB3VOMFNCIAA4TWAAWSXDKBRBJIRJRU5CZFB"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.01mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5167.479mil|Location2.X=5168.742mil|Location1.Y=3996.353mil|Location2.Y=3997.615mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5167.479mil|Location2.X=5168.742mil|Location1.Y=3996.353mil|Location2.Y=3997.615mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Track (131.27mm,87.4mm)(131.27mm,114.36mm) on Top Overlay And Pad U1-3(131.27mm,102.07mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5167.479mil|Location2.X=5168.742mil|Location1.Y=3896.326mil|Location2.Y=3897.589mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5167.479mil|Location2.X=5168.742mil|Location1.Y=3896.326mil|Location2.Y=3897.589mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Track (131.27mm,87.4mm)(131.27mm,114.36mm) on Top Overlay And Pad U1-2(131.28mm,99.53mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5167.479mil|Location2.X=5168.742mil|Location1.Y=3796.326mil|Location2.Y=3797.589mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5167.479mil|Location2.X=5168.742mil|Location1.Y=3796.326mil|Location2.Y=3797.589mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.01mm) Between Track (131.27mm,87.4mm)(131.27mm,114.36mm) on Top Overlay And Pad U1-1(131.28mm,96.99mm) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDDLGJKWLNG2BEMRMDZDIFEQ1DLEWPJEWRWVSLQNNRSWJFU3ZFVTJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5783.484mil|Location2.X=5794.734mil|Location1.Y=4165.694mil|Location2.Y=4176.944mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5783.484mil|Location2.X=5794.734mil|Location1.Y=4165.694mil|Location2.Y=4176.944mil|Absolute=True">Silk To Silk Clearance Constraint: (0.227mm &lt; 0.254mm) Between Text "U3" (147.16mm,106.14mm) on Bottom Overlay And Track (146.1mm,105.738mm)(157.51mm,105.738mm) on Bottom Overlay Silk Text to Silk Clearance [0.227mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5746.56mil|Location2.X=5757.81mil|Location1.Y=4165.694mil|Location2.Y=4176.944mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5746.56mil|Location2.X=5757.81mil|Location1.Y=4165.694mil|Location2.Y=4176.944mil|Absolute=True">Silk To Silk Clearance Constraint: (0.227mm &lt; 0.254mm) Between Text "U3" (147.16mm,106.14mm) on Bottom Overlay And Track (146.1mm,103.72mm)(146.1mm,105.738mm) on Bottom Overlay Silk Text to Silk Clearance [0.227mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5229.332mil|Location2.X=5240.582mil|Location1.Y=3772.85mil|Location2.Y=3784.1mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5229.332mil|Location2.X=5240.582mil|Location1.Y=3772.85mil|Location2.Y=3784.1mil|Absolute=True">Silk To Silk Clearance Constraint: (0.176mm &lt; 0.254mm) Between Text "+12V" (135.58mm,95.74mm) on Bottom Overlay And Track (132.78mm,93.98mm)(132.78mm,105.08mm) on Bottom Overlay Silk Text to Silk Clearance [0.176mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5230.574mil|Location2.X=5241.824mil|Location1.Y=3824.164mil|Location2.Y=3835.414mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5230.574mil|Location2.X=5241.824mil|Location1.Y=3824.164mil|Location2.Y=3835.414mil|Absolute=True">Silk To Silk Clearance Constraint: (0.239mm &lt; 0.254mm) Between Text "GND" (135.06mm,97.16mm) on Bottom Overlay And Track (132.78mm,93.98mm)(132.78mm,105.08mm) on Bottom Overlay Silk Text to Silk Clearance [0.239mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4102.643mil|Location2.X=4113.893mil|Location1.Y=4232.466mil|Location2.Y=4243.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4102.643mil|Location2.X=4113.893mil|Location1.Y=4232.466mil|Location2.Y=4243.716mil|Absolute=True">Silk To Silk Clearance Constraint: (0.215mm &lt; 0.254mm) Between Text "P1" (104.35mm,107.83mm) on Bottom Overlay And Track (103.08mm,107.44mm)(105.89mm,107.44mm) on Bottom Overlay Silk Text to Silk Clearance [0.215mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4044.08mil|Location2.X=4055.33mil|Location1.Y=3579.932mil|Location2.Y=3591.182mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4044.08mil|Location2.X=4055.33mil|Location1.Y=3579.932mil|Location2.Y=3591.182mil|Absolute=True">Silk To Silk Clearance Constraint: (0.235mm &lt; 0.254mm) Between Text "GND" (102.67mm,90.49mm) on Bottom Overlay And Track (103.08mm,87.59mm)(103.08mm,107.44mm) on Bottom Overlay Silk Text to Silk Clearance [0.235mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4046.836mil|Location2.X=4058.086mil|Location1.Y=4131.374mil|Location2.Y=4142.624mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4046.836mil|Location2.X=4058.086mil|Location1.Y=4131.374mil|Location2.Y=4142.624mil|Absolute=True">Silk To Silk Clearance Constraint: (0.095mm &lt; 0.254mm) Between Text "FAN" (102.81mm,104.38mm) on Bottom Overlay And Track (103.08mm,87.59mm)(103.08mm,107.44mm) on Bottom Overlay Silk Text to Silk Clearance [0.095mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4047.623mil|Location2.X=4058.873mil|Location1.Y=4166.811mil|Location2.Y=4178.061mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4047.623mil|Location2.X=4058.873mil|Location1.Y=4166.811mil|Location2.Y=4178.061mil|Absolute=True">Silk To Silk Clearance Constraint: (0.055mm &lt; 0.254mm) Between Text "+12V" (102.85mm,105.63mm) on Bottom Overlay And Track (103.08mm,87.59mm)(103.08mm,107.44mm) on Bottom Overlay Silk Text to Silk Clearance [0.055mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4011.018mil|Location2.X=4018.684mil|Location1.Y=3854.972mil|Location2.Y=3862.638mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4011.018mil|Location2.X=4018.684mil|Location1.Y=3854.972mil|Location2.Y=3862.638mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "E_SW1" (102.47mm,97.26mm) on Bottom Overlay And Track (101.94mm,98.09mm)(101.94mm,98.44mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4030.714mil|Location2.X=4038.381mil|Location1.Y=3798.923mil|Location2.Y=3806.589mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4030.714mil|Location2.X=4038.381mil|Location1.Y=3798.923mil|Location2.Y=3806.589mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "E_SW2" (102.43mm,96.19mm) on Bottom Overlay And Track (102.55mm,96.59mm)(103.07mm,97.11mm) on Bottom Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4004.881mil|Location2.X=4016.131mil|Location1.Y=3813.925mil|Location2.Y=3825.175mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Irnas\Incubator_FRONT-PCB\PCB_Project\Front_PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4004.881mil|Location2.X=4016.131mil|Location1.Y=3813.925mil|Location2.Y=3825.175mil|Absolute=True">Silk To Silk Clearance Constraint: (0.169mm &lt; 0.254mm) Between Text "E_SW2" (102.43mm,96.19mm) on Bottom Overlay And Text "E_SW1" (102.47mm,97.26mm) on Bottom Overlay Silk Text to Silk Clearance [0.169mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

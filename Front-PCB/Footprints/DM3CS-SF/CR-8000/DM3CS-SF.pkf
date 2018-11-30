@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "DM3CS-SF"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "DM3CS-SF")
+        (spec "default")
+    )
+)

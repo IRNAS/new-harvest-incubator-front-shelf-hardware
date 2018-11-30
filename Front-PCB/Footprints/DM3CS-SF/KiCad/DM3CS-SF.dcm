@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP DM3CS-SF
+D MicroSD card connector, push-pull type MicroSD card connector, push-pull type
+K
+F http://docs-europe.electrocomponents.com/webdocs/118f/0900766b8118f8bb.pdf
+$ENDCMP
+#
+#End Doc Library

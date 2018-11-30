@@ -1,0 +1,52 @@
+Added Component: Designator=U3(SD_CARD)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Card Type"; Value = "Secure Digital - microSD™"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Connectors, Interconnects"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "https://datasheet.ciiva.com/683/e60900232-683360.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://datasheet.ciiva.com/683/e60900232-683360.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2Description"; Value = "https://datasheet.ciiva.com/683/e60900232-683361.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "https://datasheet.ciiva.com/683/e60900232-683361.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3Description"; Value = "https://datasheet.ciiva.com/7651/1465328-7651895.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink3URL"; Value = "https://datasheet.ciiva.com/7651/1465328-7651895.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4Description"; Value = "https://datasheet.ciiva.com/3122/e60900232-3122536.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink4URL"; Value = "https://datasheet.ciiva.com/3122/e60900232-3122536.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5Description"; Value = "https://datasheet.ciiva.com/4581/e60900232-38395-4581034.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink5URL"; Value = "https://datasheet.ciiva.com/4581/e60900232-38395-4581034.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6Description"; Value = "https://datasheet.ciiva.com/16434/e60900232-16434058.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink6URL"; Value = "https://datasheet.ciiva.com/16434/e60900232-16434058.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7Description"; Value = "https://datasheet.ciiva.com/16655/e60900232-16655644.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink7URL"; Value = "https://datasheet.ciiva.com/16655/e60900232-16655644.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink8Description"; Value = "https://datasheet.ciiva.com/683/e60900232-683359.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink8URL"; Value = "https://datasheet.ciiva.com/683/e60900232-683359.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Connector Type"; Value = "Connector and Ejector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Finish"; Value = "Gold"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Contact Finish Thickness"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ejector Side"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "Memory Connectors - PC Card Sockets"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Featured Product"; Value = "DM3CS Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "Switch"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height Above Board"; Value = "0.072" (1.83mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HTML Datasheet"; Value = "DM3 Series microSD.html"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Insertion, Removal Method"; Value = "Hinged Lid"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Hirose"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "DM3CS-SF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Feature"; Value = "Normal, Standard - Top"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "Surface Mount, Right Angle"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number of Positions"; Value = "10 (8 + 2)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Online Catalog"; Value = "DM3 Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Other Names"; Value = "HR1972DKR"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Digi-Reel®"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Training Modules"; Value = "DM3 Series microSD Card Sockets"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "DM3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Standard Package"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Stock 1"; Value = "0"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Farnell"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = "1764376"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+3V3 Pin=U3-4
+Added Pin To Net: NetName=GND Pin=U3-6
+Added Pin To Net: NetName=GND Pin=U3-9
+Added Pin To Net: NetName=GND Pin=U3-10
+Added Pin To Net: NetName=GND Pin=U3-11
+Added Pin To Net: NetName=GND Pin=U3-13
+Added Member To Class: ClassName=Front_PCB Member=Component U3 SD_CARD
+Added Room: Name=Front_PCB
